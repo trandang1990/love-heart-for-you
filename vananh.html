@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Love 3D ✨</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #04020a;
+      color: #fff;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    #app {
+      position: fixed;
+      inset: 0;
+    }
+    .overlay {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .badge {
+      pointer-events: auto;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      backdrop-filter: blur(6px);
+    }
+    .badge.hint {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    .footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 18px 16px;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .hint {
+      pointer-events: auto;
+      font-size: 12px;
+      opacity: 0.75;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .chat {
+      position: fixed;
+      right: 18px;
+      bottom: 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 12;
+      pointer-events: none;
+    }
+    .chat-bubble {
+      max-width: min(240px, 60vw);
+      padding: 12px 14px;
+      border-radius: 18px 18px 4px 18px;
+      font-size: 13px;
+      line-height: 1.35;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      pointer-events: auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+    }
+    .chat-bubble.you {
+      align-self: flex-end;
+      background: linear-gradient(135deg, rgba(255,72,97,0.95), rgba(255,134,134,0.88));
+      color: #2b0006;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .chat-bubble.them {
+      border-radius: 18px 4px 18px 18px;
+    }
+    .nosupport {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px;
+      font-size: 15px;
+      background: radial-gradient(circle at 50% 20%, #1d0532, #06000f 65%, #010006);
+    }
+    a {
+      color: #ffd1f0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <div class="overlay">
+    <div class="badge" id="title">Món quà nhỏ cho em 💘</div>
+    <div class="badge hint">Chạm/Drag để xoay • Pinch/Scroll để zoom</div>
+  </div>
+  <div class="footer">
+    <div class="hint" id="subtitle">Anh ❤ Em • 20/10</div>
+  </div>
+  <div class="chat" id="chat"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
