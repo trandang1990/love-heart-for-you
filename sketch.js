@@ -1,8 +1,8 @@
 (function () {
   const DEFAULT_MESSAGES = [
-    'Anh gửi em trái tim 3D này 💗',
-    'Chúc em luôn được yêu thương và mỉm cười mỗi ngày!',
-    'Hẹn nhau những hành trình thật hạnh phúc nhé 💌'
+    'Chồng gửi vợ trái tim này 💗',
+    'Chúc vợ luôn được yêu thương và mỉm cười mỗi ngày!',
+    'Hẹn nhau những hành trình thật hạnh phúc vợ Vân Anh nhé 💌'
   ];
 
   function ready(fn) {
@@ -72,7 +72,7 @@
     const params = new URLSearchParams(location.search);
     const loverNames = params.get('name') || 'Anh ❤ Em';
     const dateText = params.get('date') || new Date().toLocaleDateString('vi-VN');
-    const titleText = params.get('title') || 'Yêu Em Rất Nhiều';
+    const titleText = params.get('title') || 'Yêu Vợ Rất Nhiều';
     const bgColorValue = parseColorParam(params.get('bg'), 0x16040a);
     const heartColorValue = parseColorParam(params.get('color'), 0xff2d55);
     const messages = (params.get('msg') || '')
